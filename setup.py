@@ -1,13 +1,13 @@
 from distutils.core import setup
 
 setup(
-    name='PyFiNeR',
+    name='pyfiner',
     version='1.0',
     author='Gergely Hajdu',
     author_email='hajdu.gergely86@gmail.com',
     packages=['pyfiner'],
-    #scripts=['bin/stowe-towels.py','bin/wash-towels.py'],
-    url='http://pypi.python.org/pypi/TowelStuff/',
+    scripts=['scripts/pyfiner.py','scripts/pyfiner'],
+    url='https://github.com/gerhajdu/pyfiner',
     license='LICENSE',
     description='Fitting Near-infrared RR Lyrae light curves',
     long_description=open('README.md').read(),
