@@ -1,3 +1,4 @@
+#!/usr/bin/env python2.7
 # PyFiNeR: Fitting Near-infrared RR Lyrae light curves
 
 # This routine implements the RR Lyrae near-infrared light curve fitting techniques
@@ -17,7 +18,6 @@ import numpy as np
 import matplotlib as mpl
 mpl.use('Agg')
 import matplotlib.pylab as plt
-#import matplotlib.ticker as ticker
 from scipy.optimize import least_squares
 from sys import argv, exit
 from lcutil_pyfiner import *

@@ -1,6 +1,7 @@
 # Light curve utilities
 
 import numpy as np
+from os import path
 
 # We read in the necessary constants contained in the coefs_pca.npz file
 # This file contains the harmonic coefficients of the Fourier transform
@@ -10,7 +11,7 @@ import numpy as np
 # and U4/U1
 
 try:
-    npzfile = np.load('coefs_pca.npz')
+    npzfile = np.load(path.dirname(__file__)+'/coefs_pca.npz')
     harmonic_coef_k = npzfile['k']
     harmonic_coef_j = npzfile['j']
     maxs            = npzfile['maxs']
