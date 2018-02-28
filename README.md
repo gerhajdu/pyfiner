@@ -23,3 +23,27 @@
  - FILE_J_LC: path of the J light curve file; must exist, but can be an empty file
  - FILE_H_LC: path of the H light curve file; must exist, but can be an empty file
  - OUTPUT.pdf: name of the output pdf file
+
+ Given these arguments, the routine does the fit and gives back the following output:
+ - COMMENT: the string from the argument list
+ - PERIOD: the final period 
+ - K_MAG: magnitude averaged mean K magnitude
+ - K_INT: intensity averaged mean K magnitude
+ - J_MAG_MEAN : magnitude averaged mean J magnitude, calculated with the mean offset
+ - J_INT_MEAN : intensity averaged mean J magnitude, calculated with the mean offset
+ - J_MAG_MEDI : magnitude averaged mean J magnitude, calculated with the median offset
+ - J_INT_MEDI : intensity averaged mean J magnitude, calculated with the median offset
+ - H_MAG_MEAN : magnitude averaged mean H magnitude, calculated with the mean offset
+ - H_INT_MEAN : intensity averaged mean H magnitude, calculated with the mean offset
+ - H_MAG_MEDI : magnitude averaged mean H magnitude, calculated with the median offset
+ - H_INT_MEDI : intensity averaged mean H magnitude, calculated with the median offset
+ - U1: amplitude of the first principal component of the K light curve
+ - U2: amplitude of the second principal component of the K light curve
+ - U3: amplitude of the third principal component of the K light curve
+ - U4: amplitude of the fourth principal component of the K light curve
+ - RMSE: the Root Mean Square Error of the K-band fit
+ - COST: the final value of the Huber cost function
+ - COSTN: the Uber cost function per K-band light curve cost
+ - N_FINAL: the number of K-band light curve points in the final fit
+ - N_INITIAL: the initial number of K-band light curve points
+
