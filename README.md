@@ -14,8 +14,7 @@ This routine was developed for:
 
 ## Installation
 
-Copy the files `pyfiner`, `pyfiner.py`, `lcutil_pyfiner.py` and `coefs_pca.npz` to the same
-directory in the system PATH.
+Copy all files from the `bin` directory to the same directory in the system PATH.
 
 ## Usage
 
