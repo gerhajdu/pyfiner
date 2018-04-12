@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python
 # PyFiNeR: Fitting Near-infrared RR Lyrae light curves
 
 # This routine implements the RR Lyrae near-infrared light curve fitting techniques
@@ -14,6 +14,8 @@
 # We import the necessary packages and make sure that matplotlib is not in interactive
 # mode
 
+from __future__ import print_function
+from builtins import range
 import numpy as np
 import matplotlib as mpl
 mpl.use('Agg')
@@ -35,12 +37,12 @@ try:
     H_LC_path = argv[5]
     saveto    = argv[6]
 except:
-    print "Usage: python",argv[0],"COMMENT PERIOD FILE_K_LC FILE_J_LC FILE_H_LC OUTPUT.pdf"
-    print "COMMENT: a string passed through to the output, usually the name of the star"
-    print "FILE_K_LC: path of the K light curve file"
-    print "FILE_J_LC: path of the J light curve file, can be an empty file"
-    print "FILE_H_LC: path of the H light curve file, can be an empty file"
-    print "OUTPUT.pdf: name of the file to plot the results of the fit"
+    print("Usage: python",argv[0],"COMMENT PERIOD FILE_K_LC FILE_J_LC FILE_H_LC OUTPUT.pdf")
+    print("COMMENT: a string passed through to the output, usually the name of the star")
+    print("FILE_K_LC: path of the K light curve file")
+    print("FILE_J_LC: path of the J light curve file, can be an empty file")
+    print("FILE_H_LC: path of the H light curve file, can be an empty file")
+    print("OUTPUT.pdf: name of the file to plot the results of the fit")
 
     exit()
 
@@ -48,7 +50,7 @@ try:
     LC_K=np.loadtxt(K_LC_path, unpack=True)
     jd_min=[np.min(LC_K[0,0])]
 except:
-    print "{:s}: K light curve file not found!".format(NAME)
+    print("{:s}: K light curve file not found!".format(NAME))
     exit()
 
 try:
@@ -60,7 +62,7 @@ try:
         jd_min.append(np.min(LC_J[0]))
         
 except:
-    print "{:s}: J light curve file not found!".format(NAME)
+    print("{:s}: J light curve file not found!".format(NAME))
     exit()
 
 try:
@@ -71,7 +73,7 @@ try:
         no_H = False
         jd_min.append(np.min(LC_H[0]))
 except:
-    print "{:s}: H light curve file not found!".format(NAME)
+    print("{:s}: H light curve file not found!".format(NAME))
     exit()
 
 shift = np.int(np.min(jd_min))-2
@@ -92,7 +94,7 @@ LC_K2 = LC_K[:,mask]
 # with the fitting after the first cut; in this case, we exit here
 
 if (LC_K2.shape[1]<10):
-    print NAME, "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9", LC_K2.shape[1], LC_K.shape[1]
+    print(NAME, "9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9", LC_K2.shape[1], LC_K.shape[1])
     exit()
 
 
@@ -110,7 +112,7 @@ costs      = np.zeros(5)
 # be the starting point in the next step of the fitting; we also do a 3.5 sigma cut,
 # where sigma is estimated from the Median Absolute Deviation
 
-for i in xrange(5):
+for i in range(5):
     parameters_to_fit =  np.asarray( (np.median(LC_K2[1]), 1.0+(-2+i)*period/5., period, 0.7, 0., 0., 0.))
     huber             = least_squares(return_residuals, x0=parameters_to_fit, args=(LC_K2[0], LC_K2[1]),
                                       loss='huber', f_scale=0.05, bounds=(lower, upper))
@@ -256,5 +258,5 @@ textstr+= '{:9.6f} {:9.6f} {:9.6f} {:9.6f} {:6.4f} {:6.4f} '.format(U[0], U[1], 
 textstr+= '{:8.6f} {:4d} {:4d}'.format(cost/LC_K3.shape[1], LC_K3.shape[1], LC_K.shape[1])
 
 
-print textstr
+print(textstr)
 

@@ -1,5 +1,6 @@
 # Light curve utilities
 
+from __future__ import print_function
 import numpy as np
 from os import path
 
@@ -17,7 +18,7 @@ try:
     maxs            = npzfile['maxs']
     mins            = npzfile['mins']
 except:
-    print "Coefficient file not found"
+    print("Coefficient file not found")
     exit()
 
 # The file we have read in has the information up to the 12 Fourier order
