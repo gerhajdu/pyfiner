@@ -9,7 +9,8 @@
 # of the J-band light curve is approximated with the K-band principal component
 # amplitudes
 
-# This routine was developed for Python 2.7, Numpy 1.12, Scipy 1.0 and Matplotlib 2.1
+# This routine was developed for Python 2.7+ or 3.6+, Numpy 1.12+, Scipy 1.0+ and
+# Matplotlib 2.1+
 
 # We import the necessary packages and make sure that matplotlib is not in interactive
 # mode

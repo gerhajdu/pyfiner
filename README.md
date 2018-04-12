@@ -1,16 +1,17 @@
 # PyFiNeR: Fitting Near-infrared RR Lyrae light curves
 
-This routine implements the RR Lyrae near-infrared light curve fitting techniques described by Hajdu et al. (2018).
+This routine implements the RR Lyrae near-infrared light curve fitting techniques described by
+[Hajdu et al. (2018)](https://arxiv.org/abs/1804.01456).
 
 The K-band light curve are fit with the Fourier transformed principal components coefficients;
 the H-band data is fit with the same light-curve shape; the shape of the J-band light curve is
 approximated with the K-band principal component amplitudes.
 
 This routine was developed for:
- - `Python` 2.7
- - `Numpy` 1.12
- - `Scipy` 1.0
- - `Matplotlib` 2.1
+ - `Python` 2.7+ or 3.6+
+ - `Numpy` 1.12+
+ - `Scipy` 1.0+
+ - `Matplotlib` 2.1+
 
 ## Installation
 
