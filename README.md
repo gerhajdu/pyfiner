@@ -16,6 +16,8 @@ This routine was developed for:
 ## Installation
 
 Copy all files from the `bin` directory to the same directory in the system PATH.
+If you get "ImportError: No module named builtins" error while using Python 2.7,
+install the `future` package.
 
 ## Usage
 
